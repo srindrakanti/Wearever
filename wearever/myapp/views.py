@@ -14,3 +14,5 @@ def about(request):
     title='Wearever'
     html = render_to_string('about.html', {'title': title, 'group': group})
     return HttpResponse(html)
+
+
