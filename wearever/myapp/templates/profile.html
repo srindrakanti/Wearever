@@ -3,10 +3,11 @@
 <head>
     <title>{{ title }}</title>
 </head>
-<body>
+<body></body>
     <h1>Welcome to Wearever!</h1>
+    <p>Current User: {{ user }}</p>
     <p><a href="{% url 'about' %}">About</a></p>
-    <p><a href="{% url 'account_login'%}">Login</a></p>
+    <p><a href="{% url 'account_logout'%}">Logout</a></p>
     <h1>Current Weather: {{stat}}</h1>
     <p>Temperature: {{temp}} degrees Fahrenheit</p>
     <p>Humidity: {{humid}}%</p>
