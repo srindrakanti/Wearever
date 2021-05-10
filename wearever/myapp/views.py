@@ -14,7 +14,9 @@ def home(request):
     mgr = owm.weather_manager()
     observation = mgr.weather_at_place('Stony Brook, US')
     w = observation.weather
-    html = render_to_string('home.html', {'title': title, 'stat': w.detailed_status, 'temp': w.temperature('fahrenheit').get('temp'), 'humid': w.humidity, 'wind': round(w.wind('miles_hour').get('speed'),1)})
+    #SET DEFAULT RECOMMENDED
+    html = render_to_string('home.html', {'title': title, 'stat': w.detailed_status, 'temp': w.temperature('fahrenheit').get('temp'), 'humid': w.humidity, 'wind': round(w.wind('miles_hour').get('speed'),1),
+    'toprec': 'REC', 'bottomrec': 'REC', 'footwearrec': 'REC', 'layersrec': 'REC'})
     return HttpResponse(html)
 
 def about(request):
@@ -39,5 +41,7 @@ def profile(request):
     observation = mgr.weather_at_place('Stony Brook, US')
     w = observation.weather
     #GET RECOMMENDATIONS FROM MODEL AND PUT INTO HTML
-    html = render_to_string('profile.html', {'title': title, 'user': user, 'stat': w.detailed_status, 'temp': w.temperature('fahrenheit').get('temp'), 'humid': w.humidity, 'wind': round(w.wind('miles_hour').get('speed'),1)})
+    html = render_to_string('profile.html', {'title': title, 'user': user, 'stat': w.detailed_status, 'temp': w.temperature('fahrenheit').get('temp'), 'humid': w.humidity, 'wind': round(w.wind('miles_hour').get('speed'),1),
+    'topdefault': 'DEFAULT', 'bottomdefault': 'DEFAULT', 'footweardefault': 'DEFAULT', 'layersdefault': 'DEFAULT',
+    'toprec': 'REC', 'bottomrec': 'REC', 'footwearrec': 'REC', 'layersrec': 'REC'})
     return HttpResponse(html)

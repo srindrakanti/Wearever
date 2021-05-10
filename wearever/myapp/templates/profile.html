@@ -57,6 +57,7 @@
         <form action="{% url 'profile' %}" method="post">
         <label for="top">Topwear: </label>
         <select id="top" name="top" required>
+            <option selected value="{{topdefault}}">{{topdefault}}</option>
             <option value="wintercoat">Winter Coat</option>
             <option value="sweatshirt">Sweatshirt</option>
             <option value="longsleeve">Longsleeve</option>
@@ -66,6 +67,7 @@
         <br><br>
         <label for="bottom">Bottomwear:</label>
         <select id="bottom" name="bottom" required>
+            <option selected value="{{bottomdefault}}">{{bottomdefault}}</option>
             <option value="pants">Pants</option>
             <option value="swearpants">Sweatpants</option>
             <option value="shorts">Shorts</option>
@@ -73,6 +75,7 @@
         <br><br>
         <label for="footwear">Footwear:</label>
         <select id="footwear" name="footwear" required>
+            <option selected value="{{footweardefault}}">{{footweardefault}}</option>
             <option value="boots">Boots</option>
             <option value="sneakers">Sneakers</option>
             <option value="sandals">Sandals</option>
@@ -80,6 +83,7 @@
         <br><br>
         <label for="layers">Additional Layers:</label>
         <select id="layers" name="layers" required>
+            <option selected value="{{layersdefault}}">{{layersdefault}}</option>
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -93,11 +97,11 @@
 </div>
 <div class="split right">
     <div class="centered">
-    <h1>Recommended:</h1>
-    <p>Topwear: </p>
-    <p>Bottomwear: </p>
-    <p>Footwear: </p>
-    <p>Layers: </p>
+    <h1>Recommended: </h1>
+    <p>Topwear: {{toprec}}</p>
+    <p>Bottomwear: {{bottomrec}}</p>
+    <p>Footwear: {{footwearrec}}</p>
+    <p>Layers: {{layersrec}}</p>
     </div>
 </div>
 </html>
