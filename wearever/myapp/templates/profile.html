@@ -2,7 +2,43 @@
 <html>
 <head>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="wearever.css">
+    <style>
+        /* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  </style>
 </head>
 <div class="split left">
     <div class="centered">
@@ -15,12 +51,53 @@
         <p>Temperature: {{temp}} degrees Fahrenheit</p>
         <p>Humidity: {{humid}}%</p>
         <p>Wind: {{wind}} mph</p>
+        <h1>Feedback</h1>
+        <p>What would you liked to have worn the last time you visited?</p>
+        <!-- FILL IN FORM WITH WHAT WAS SUGGESTED LAST TIME AS DEFAULT-->
+        <form action="{% url 'profile' %}" method="post">
+        <label for="top">Topwear: </label>
+        <select id="top" name="top" required>
+            <option value="wintercoat">Winter Coat</option>
+            <option value="sweatshirt">Sweatshirt</option>
+            <option value="longsleeve">Longsleeve</option>
+            <option value="shortsleeve">Shortsleeve</option>
+            <option value="tanktop">Tank Top</option>
+        </select>
+        <br><br>
+        <label for="bottom">Bottomwear:</label>
+        <select id="bottom" name="bottom" required>
+            <option value="pants">Pants</option>
+            <option value="swearpants">Sweatpants</option>
+            <option value="shorts">Shorts</option>
+        </select>
+        <br><br>
+        <label for="footwear">Footwear:</label>
+        <select id="footwear" name="footwear" required>
+            <option value="boots">Boots</option>
+            <option value="sneakers">Sneakers</option>
+            <option value="sandals">Sandals</option>
+        </select>
+        <br><br>
+        <label for="layers">Additional Layers:</label>
+        <select id="layers" name="layers" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
         </body>
     </div>
 </div>
 <div class="split right">
     <div class="centered">
-        <img src="file://sweatshirt.jpg" alt="sweatshirt">
+    <h1>Recommended:</h1>
+    <p>Topwear: </p>
+    <p>Bottomwear: </p>
+    <p>Footwear: </p>
+    <p>Layers: </p>
     </div>
 </div>
 </html>
