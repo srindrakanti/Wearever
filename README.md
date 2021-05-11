@@ -7,13 +7,13 @@ Our SGDCLassifier is linked to an SQLite database with Django to create a seamle
 
 Requirements: 
 Python 3.9.2
-python packages pyowm, scikit-learn, django
+python packages pyowm, scikit-learn, django, django-allauth
 VS Code
 
 How to Run:
 
 1. Setup a virtual environment with django using this tutorial: https://code.visualstudio.com/docs/python/tutorial-django
-2. Install required python packages mentioned above.
+2. Install required python packages mentioned above, and set this python as your interpreter.
 3. Relocate to the .\Wearever\wearever directory.
 4. In the terminal use "python manage.py runserver".
 5. In browser, go to localhost:8000.
