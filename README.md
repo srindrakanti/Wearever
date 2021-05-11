@@ -17,7 +17,7 @@ How to Run:
 3. Relocate to the .\Wearever\wearever directory.
 4. In the terminal use "python manage.py runserver".
 5. In browser, go to localhost:8000.
-6. You are now at the home page. Click "Login" to sign up using a Google account. Since we can only use basic Google AllAuth capabilities, you will have to use your Stony Brook emails: niranjan@cs.stonybrook.edu, tianyi.zhao@stonybrook.edu, tao.sun.1@stonybrook.edu (emails have to be given prior clearance to properly login).
+6. You are now at the home page. Click "Login" and then "Google" to sign up using a Google account. Since we can only use basic Google AllAuth capabilities, you will have to use your Stony Brook emails: niranjan@cs.stonybrook.edu, tianyi.zhao@stonybrook.edu, tao.sun.1@stonybrook.edu (emails have to be given prior clearance to properly login).
 7. Once signed in, you will have a default model that recommends clothing based on heat index and wind chill. As you continue to use the app over time and provide feedback on the clothing recommendations, the model will personalize to your preferences and provide accurate recommendations for the clothing you will be comfortable wearing on any given day. You can provide feedback in the lower left-hand side of the application, where you can modify the recommendation made to you the previous time you used the application. This information will be relayed to the database and adjust future recommendations accordingly.
 
 
