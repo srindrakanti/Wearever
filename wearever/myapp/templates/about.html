@@ -2,10 +2,53 @@
 <html>
 <head>
   <title>{{ title }}</title>
+  <style>
+    /* Split the screen in half */
+.split {
+height: 100%;
+width: 50%;
+position: fixed;
+z-index: 1;
+top: 0;
+overflow-x: hidden;
+padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+left: 0;
+background-color: aqua;
+
+}
+
+/* Control the right side */
+.right {
+right: 0;
+background-color: aqua;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+background-color: aqua;
+}
+
+#border {
+border-style: solid;
+border-width: 5px;
+border-color: black;
+}
+</style>
 </head>
 <body>
+  <div class="centered" id="border">
   <h1>About</h1>
-  <p>Project by {{ group }}.</p>
+  <p>Spring 2021 Final Project by Aneek Barua, Timothy Corcoran, & Srikar Indrakanti.</p>
   <p><a href="{% url 'home' %}">Return to the homepage</a>.</p>
+  </div>
 </body>
 </html>

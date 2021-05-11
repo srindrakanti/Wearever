@@ -17,11 +17,14 @@
   /* Control the left side */
   .left {
     left: 0;
+    background-color: aqua;
+    
   }
   
   /* Control the right side */
   .right {
     right: 0;
+    background-color: aqua;
   }
   
   /* If you want the content centered horizontally and vertically */
@@ -38,10 +41,16 @@
     width: 150px;
     border-radius: 50%;
   }
+  
+  #border {
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+  }
   </style>
 </head>
 <div class="split left">
-    <div class="centered">
+    <div class="centered" id="border">
         <body>
         <h1>Welcome to Wearever!</h1>
         <p>Current User: {{ user }}</p>
@@ -52,12 +61,12 @@
         <p>Humidity: {{humid}}%</p>
         <p>Wind: {{wind}} mph</p>
         <h1>Feedback</h1>
-        <p>What would you liked to have worn the last time you visited?</p>
+        <p>What would you liked to have worn the last time you visited on {{date}}?</p>
         <!-- FILL IN FORM WITH WHAT WAS SUGGESTED LAST TIME AS DEFAULT-->
         <form action="{% url 'profile' %}" method="post">
         <label for="top">Topwear: </label>
         <select id="top" name="top" required>
-            <option selected value="{{topdefault}}">{{topdefault}}</option>
+            <option selected hidden value="{{topdefault}}">{{topdefault}}</option>
             <option value="wintercoat">Winter Coat</option>
             <option value="sweatshirt">Sweatshirt</option>
             <option value="longsleeve">Longsleeve</option>
@@ -67,9 +76,9 @@
         <br><br>
         <label for="bottom">Bottomwear:</label>
         <select id="bottom" name="bottom" required>
-            <option selected value="{{bottomdefault}}">{{bottomdefault}}</option>
+            <option selected hidden value="{{bottomdefault}}">{{bottomdefault}}</option>
             <option value="pants">Pants</option>
-            <option value="swearpants">Sweatpants</option>
+            <option value="sweatpants">Sweatpants</option>
             <option value="shorts">Shorts</option>
         </select>
         <br><br>
@@ -81,27 +90,19 @@
             <option value="sandals">Sandals</option>
         </select>
         <br><br>
-        <label for="layers">Additional Layers:</label>
-        <select id="layers" name="layers" required>
-            <option selected value="{{layersdefault}}">{{layersdefault}}</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <br><br>
+        <input type="hidden" value="{{rec_id}}" name="rec_id" />
         <input type="submit" value="Submit">
+        <br><br>
     </form>
         </body>
     </div>
 </div>
 <div class="split right">
-    <div class="centered">
+    <div class="centered" id="border">
     <h1>Recommended: </h1>
     <p>Topwear: {{toprec}}</p>
     <p>Bottomwear: {{bottomrec}}</p>
     <p>Footwear: {{footwearrec}}</p>
-    <p>Layers: {{layersrec}}</p>
     </div>
 </div>
 </html>
